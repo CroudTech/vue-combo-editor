@@ -1,0 +1,34 @@
+{
+  "name": "vue-combo-editor",
+  "version": "0.0.1",
+  "description": "Vue combination input fields for summary text and additional rich text details",
+  "main": "vue-combo-editor.js",
+  "browserify": {
+    "transform": [
+      "vueify"
+    ]
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CroudSupport/vue-combo-editor.git"
+  },
+  "keywords": [
+    "vue",
+    "quill",
+    "js",
+    "plugin"
+  ],
+  "author": "Paul Watkins",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CroudSupport/vue-combo-editor/issues"
+  },
+  "homepage": "https://github.com/CroudSupport/vue-combo-editor#readme",
+  "dependencies": {
+    "quill": "^0.20.1",
+    "quill-render": "^1.0.5"
+  }
+}
