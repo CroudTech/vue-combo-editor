@@ -122,9 +122,6 @@ export default {
         editor_id: {
             default: null
         },
-        show_description: {
-            default: false
-        },
         summary: {
             default: ''
         },
@@ -157,7 +154,8 @@ export default {
 
     data() {
         return {
-            textbox_styling: 'textbox block blank'
+            textbox_styling: 'textbox block blank',
+            show_description : false
         }
     },
 
