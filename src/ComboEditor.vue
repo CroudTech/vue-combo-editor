@@ -99,7 +99,7 @@
     <div class="expand-container">
         <div v-show="show_description" class="expand-details" transition="combo">
             <div class="expand-editor">
-                <quill :id="editor_id" :content.sync="description" output="html"></quill>
+                <quill :id="editor_id" :content.sync="description" :output="output"></quill>
                 <div class="expand-option-collapse"><a class="actionLink small icon alt" @click.prevent="hideDetails"><i class="fa fa-angle-up"></i></a></div>
             </div>
         </div>
@@ -174,18 +174,23 @@ export default {
             this.show_description = false;
         },
 
+        'update-description' : function()
+        {
+            this.$broadcast('set-html', this.description)
+        }
+
     },
 
     watch: {
-        'description': function(value) {
-            if (value == '') {
-                this.$nextTick(() => {
-                    this.$els.titlefield.focus()
-                });
-            } else {
-                this.show_description = true;
-            }
-        },
+        // 'description': function(value) {
+        //     if (value == '') {
+        //         this.$nextTick(() => {
+        //             this.$els.titlefield.focus()
+        //         });
+        //     } else {
+        //         this.show_description = true;
+        //     }
+        // },
 
         'show_description': function(oldval, newval) {
 
