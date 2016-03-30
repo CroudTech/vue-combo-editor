@@ -97,7 +97,7 @@
     <input type="text" v-el:titlefield v-bind:class="textbox_styling" placeholder="Event summary" v-model="summary" @keydown.enter.prevent="showDetails" @keydown.tab="event_tab">
     <div v-show="!show_description" class="expand-option-expand"><a class="actionLink small icon alt" @click.prevent="showDetails"><i class="fa fa-pencil"></i></a></div>
     <div class="expand-container">
-        <div v-show="show_description" class="expand-details" transition="combo">
+        <div v-show="show_description" class="expand-details" transition="combo" >
             <div class="expand-editor">
                 <quill :id="editor_id" :content.sync="description" :output="output"></quill>
                 <div class="expand-option-collapse"><a class="actionLink small icon alt" @click.prevent="hideDetails"><i class="fa fa-angle-up"></i></a></div>
@@ -161,6 +161,11 @@ export default {
 
     events: {
 
+        'text-change' : function()
+        {
+
+        },
+
         'show-details': function() {
             this.showDetails();
         },
@@ -169,7 +174,7 @@ export default {
             this.hideDetails();
         },
 
-        'close-edit': function() {
+        'close-description': function() {
             this.editing = false;
             this.show_description = false;
         },
@@ -177,20 +182,16 @@ export default {
         'update-description' : function()
         {
             this.$broadcast('set-html', this.description)
+        },
+
+        'focus-combo-summary' : function()
+        {
+            this.$els.titlefield.focus()
         }
 
     },
 
     watch: {
-        // 'description': function(value) {
-        //     if (value == '') {
-        //         this.$nextTick(() => {
-        //             this.$els.titlefield.focus()
-        //         });
-        //     } else {
-        //         this.show_description = true;
-        //     }
-        // },
 
         'show_description': function(oldval, newval) {
 
