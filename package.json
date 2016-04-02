@@ -26,9 +26,10 @@
   "bugs": {
     "url": "https://github.com/CroudSupport/vue-combo-editor/issues"
   },
-  "homepage": "https://github.com/CroudSupport/vue-combo-editor#readme",
+  "homepage": "https://github.com/CroudSxupport/vue-combo-editor#readme",
   "dependencies": {
     "quill": "^0.20.1",
-    "quill-render": "^1.0.5"
+    "quill-render": "^1.0.5",
+    "vue-dropzone" : "https://github.com/CroudSupport/vue-dropzone.git",
   }
 }
